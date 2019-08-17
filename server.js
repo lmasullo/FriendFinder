@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
 });
 
 // Route to Survey page
-app.get('/', (req, res) => {
+app.get('/survey', (req, res) => {
   res.sendFile(path.join(__dirname, '/app/public/survey.html'));
 });
 
