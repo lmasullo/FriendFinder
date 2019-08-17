@@ -12,12 +12,12 @@ app.use(express.json());
 
 // Route to home page
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '/app/public/home.html'));
+  res.sendFile(path.join(__dirname, './app/public/home.html'));
 });
 
 // Route to Survey page
 app.get('/survey', (req, res) => {
-  res.sendFile(path.join(__dirname, '/app/public/survey.html'));
+  res.sendFile(path.join(__dirname, './app/public/survey.html'));
 });
 
 // Listener
