@@ -20,6 +20,8 @@ app.get('/survey', (req, res) => {
   res.sendFile(path.join(__dirname, './app/public/survey.html'));
 });
 
+// todo Send a 404 like in star wars
+
 // Listener
 // ===========================================================
 app.listen(PORT, () => {
