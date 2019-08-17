@@ -3,7 +3,7 @@
 const express = require('express');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.event.PORT || 3000;
 
 // Listener
 // ===========================================================
