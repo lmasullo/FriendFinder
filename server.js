@@ -12,7 +12,7 @@ app.use(express.json());
 
 // Route to home page
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'home.html'));
+  res.sendFile(path.join(__dirname, '/app/public/home.html'));
 });
 
 // Listener
