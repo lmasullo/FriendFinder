@@ -10,17 +10,17 @@ const PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// Route to home page
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, './app/public/home.html'));
-});
+// ================================================================================
+// ROUTER
+// The below points our server to a series of "route" files.
+// These routes give our server a "map" of how to respond when users visit or request data from various URLs.
+// ================================================================================
 
-// Route to Survey page
-app.get('/survey', (req, res) => {
-  res.sendFile(path.join(__dirname, './app/public/survey.html'));
-});
+require('./app/routing/apiRoutes')(app);
+require('./app/routing/htmlRoutes')(app);
 
 // todo Send a 404 like in star wars
+// todo validate on front and back end
 
 // Listener
 // ===========================================================
