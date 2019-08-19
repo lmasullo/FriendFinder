@@ -7,7 +7,7 @@ const friends = require('../data/friends');
 // Set Global Variables
 let diff = 0;
 let totalDiff = 0;
-const matches = [];
+let matches = [];
 let matchesSorted = [];
 
 // ROUTING
@@ -17,9 +17,13 @@ module.exports = function(app) {
   app.post('/api/friends', (req, res) => {
     // Get the post from the request body
     const newPerson = req.body;
+    console.log(newPerson.name);
 
     // Get the users answers and put in array of numbers
     const answers = newPerson.scores;
+    console.log(answers);
+
+    console.log(friends.length);
 
     // Get the array of stored friends and lets compare
     // Loop over friends
@@ -52,10 +56,13 @@ module.exports = function(app) {
       return a.diff - b.diff;
     });
 
-    console.log(matchesSorted);
-
     // Once get a match, then I can push this new user to the friends array
     friends.push(newPerson);
+
+    console.log(matchesSorted[0].name);
+
+    // Clear the matches array
+    matches = [];
 
     // Return the match
     res.json(matchesSorted[0]);

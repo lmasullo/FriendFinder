@@ -182,7 +182,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h2 class="modal-title"><strong>Best Match</strong></h2>
-          <button type="button" class="close" data-dismiss="modal">
+          <button id="btnClose" type="button" class="close" data-dismiss="modal">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
@@ -295,5 +295,14 @@
     } else {
       alert("Please fill out all fields before submitting!");
     }
+  });
+
+
+  // Reload Form after click Close
+  $("#btnClose").on("click", function (event) {
+    console.log('Close clicked');
+
+    // Refresh the page after data is cleared
+    location.reload();
   });
 </script>
