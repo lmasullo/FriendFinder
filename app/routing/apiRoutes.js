@@ -13,7 +13,7 @@ let matchesSorted = [];
 // ROUTING
 // Export this so I can use on server.js
 module.exports = function(app) {
-  // api GET Requests
+  // api Post Requests
   app.post('/api/friends', (req, res) => {
     // Get the post from the request body
     const newPerson = req.body;
@@ -59,5 +59,10 @@ module.exports = function(app) {
 
     // Return the match
     res.json(matchesSorted[0]);
+  });
+
+  // api Get Requests
+  app.get('/api/friends', (req, res) => {
+    res.json(friends);
   });
 };
