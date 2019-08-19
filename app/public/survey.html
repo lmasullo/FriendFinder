@@ -13,7 +13,7 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 
-  <title>Friend Finder</title>
+  <title>Friend Finder - Survey</title>
 </head>
 
 <body>
@@ -233,7 +233,7 @@
     }
   };
 
-  //Loop through selects
+  //Loop through selects and configure
   for (var selector in config) {
     $(selector).chosen(config[selector]);
   }
@@ -264,8 +264,8 @@
     if (validateForm()) {
       // Create an object for the user"s data
       var userData = {
-        name: $("#name").val(),
-        photo: $("#photo").val(),
+        name: $("#name").val().trim(),
+        photo: $("#photo").val().trim(),
         scores: [
           $("#q1").val(),
           $("#q2").val(),
@@ -289,6 +289,20 @@
 
         // Show the modal with the best match
         $("#results-modal").modal("toggle");
+
+        // Clear the form when submitting
+        $("#name").val("");
+        $("#photo").val("");
+        $('#q1').val("").trigger('chosen:updated');
+        $("#q2").val("").trigger('chosen:updated');
+        $("#q3").val("").trigger('chosen:updated');
+        $("#q4").val("").trigger('chosen:updated');
+        $("#q5").val("").trigger('chosen:updated');
+        $("#q6").val("").trigger('chosen:updated');
+        $("#q7").val("").trigger('chosen:updated');
+        $("#q8").val("").trigger('chosen:updated');
+        $("#q9").val("").trigger('chosen:updated');
+        $("#q10").val("").trigger('chosen:updated');
 
       });
       //Not all fields filled out
