@@ -31,7 +31,7 @@ module.exports = function(app) {
 
         // Add the diff to the totalDiff variable (use the Absolute Number)
         totalDiff += Math.abs(diff);
-        console.log(totalDiff);
+        // console.log(totalDiff);
       }
 
       // Push the index, name, and the diff to the matches array
